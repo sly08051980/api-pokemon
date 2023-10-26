@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+
+    
+    background: url(../image/pokemon.jpg) no-repeat center center fixed;
+    
+    -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+ text-align: center;
+
+}
+header{
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+h1{
+    color:white;
+    font-size: 50px;
+    font-weight: bold;
+}
+main{
+
+
+width: 100%;
+height: 500px;
+display: flex;
+justify-content: center;
+
+}
+.stats img {
+    width: 60%;
+}
+.affichage{
+   border-radius: 5%;
+    background-color: 	rgba(6, 61, 68, 0.7);
+   width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    
+
+}
+select{
+    background-color: 	rgba(6, 61, 68, 0.7);
+    font-size: 20px;
+    font-weight: bolder;
+    width: 30%;
+    text-align: center;
+    color: white;
+}
+.selection{
+    text-align: center;
+}
+
+.stats{
+    display: flex;
+justify-content: space-around;
+align-items: center;
+}
+p{
+    color: white;
+    padding-bottom: 1em;
+    font-size: 25px;
+    border: 1px black solid;
+    border-radius: 15%;
+  
+    
+}
+label{
+    padding-top: 2em;
+    color: white;
+}
+
+p:hover {
+    background-color: green;
+  }

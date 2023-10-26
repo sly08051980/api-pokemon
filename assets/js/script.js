@@ -1,13 +1,62 @@
-console.log("chargé");
 
-let dataFetchTer= await getDataAvecPromesseExplicite();
+console.log("chargé");
+let unPokemon = {};
+let dataFetchTer= await getPokemonsList();
+const listePokemons=dataFetchTer;
 console.log("voici les donnée via fetch avce promesse explicite :",dataFetchTer);
 
 
-function getDataAvecPromesseExplicite () {
+// Génération des options de la Select
+let listeDeroulante= document.querySelector('select');
+garnirSelectList();
+choixOption();
+
+
+
+
+function choixOption() {
+   
+    listeDeroulante.addEventListener('change', function () {
+        document.querySelector(".stats").innerHTML="";
+        let stats = document.querySelector(".stats");
+        const pokemonChoisi = listePokemons.find((pokemon) => pokemon.name == listeDeroulante.value);
+        const images = document.querySelector(".stats");
+        stats.innerHTML = `<img src="${pokemonChoisi.image}" alt=""/>`
+
+        let statistique = document.createElement("div");
+        statistique.setAttribute("class" , "statistique");
+        stats.appendChild(statistique);
+        for (const [propriete, valeur] of Object.entries(pokemonChoisi.stats)) {
+            let  uneStat = document.createElement("p");
+            uneStat.textContent = `${propriete} : ${valeur}`;
+            statistique.appendChild(uneStat);  
+        }
+    } 
+    );
+}
+
+/**
+ * Génère dynamiquement les options de l'élément <select>
+ */
+function garnirSelectList() {
+    // document.body.appendChild(listeDeroulante);
+    for (let i = 0; i < listePokemons.length; i++) {
+        unPokemon = listePokemons[i];
+        let option = document.createElement("option");
+        option.value= unPokemon.name;
+        option.id = unPokemon.id;
+        option.innerHTML = unPokemon.name;
+        listeDeroulante.appendChild(option);
+       
+        
+    }
+  
+}
+
+function getPokemonsList () {
     return new Promise((resolve) => {
         return resolve(
-            fetch("https://pokebuildapi.fr/api/v1/pokemon?limit=50", {
+            fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/10", {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
@@ -17,61 +66,7 @@ function getDataAvecPromesseExplicite () {
             }).then(function(response) {
             
                 return response.json();
-             
             })
         );
-
     });
-
 }
-
-let recupererResultat=[];
-let resultat;
-recupererResultat= dataFetchTer;
-let option;
-
-
-// let listeDeroulante = document.createElement("select");
-let listeDeroulante= document.querySelector('#poke');
-for (let i = 0; i < 10; i++) {
-   resultat= recupererResultat[i];
-  
-   console.log("pokemon" ,resultat.name);
-
-
-   option = document.createElement("option");
-   option.value= resultat.name;
-   option.id = resultat.id;
-   option.innerHTML= resultat.name;
-   listeDeroulante.appendChild(option);
-
-
-
-}
-
-	document.body.appendChild(listeDeroulante);
-
-
-listeDeroulante.addEventListener('change',function(){
-   let caracteristique= document.querySelector("#caract");
-caracteristique.innerHTML=this.value;
-
-
-let images = document.createElement('img');
-
-document.body.appendChild(images);
-
-
-
-
-   
-})
-
-
-
-
-
-
-
-
-
