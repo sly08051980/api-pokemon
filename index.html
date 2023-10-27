@@ -13,11 +13,23 @@
     </header>
     <main>
         <div class="affichage">
-            <div class="selection">
-                <select>
-                    <option>Selectionner un Pokemon</option>
-                </select>
-            </div>
+            <fieldset>
+                <legend>Selection de Pokemon</legend>
+                    <div class="organisation">
+                        <input type="radio" type="checkbox" name="listepokemon" value="nom" id="liste" checked >
+                        <label for="liste">Par Nom</label>
+                    
+                    
+                        <input type="radio" type="checkbox" name="listepokemon" value="attribut" id="attr" >
+                        <label for="attr">Par Attribut</label>
+                    </div>
+                    <div class="selection">
+                        <select>
+                            <option>Selectionner un Pokemon</option>
+                        </select>
+                    </div>
+                </fieldset>
+            
             <label>Pour Connaitre les caractéristique de : </label><label id="caract"></label>
             <div class="stats">
                 <h2>Stats</h2>
