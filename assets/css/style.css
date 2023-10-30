@@ -39,7 +39,7 @@ justify-content: center;
 }
 .affichage{
    border-radius: 5%;
-    background-color: 	rgba(6, 61, 68, 0.7);
+    background-color:   rgba(6, 61, 68, 0.7);
    width: 50%;
 
     display: flex;
@@ -48,7 +48,7 @@ justify-content: center;
 
 }
 select{
-    background-color: 	rgba(6, 61, 68, 0.7);
+    background-color:   rgba(6, 61, 68, 0.7);
     font-size: 20px;
     font-weight: bolder;
     width: 30%;
@@ -70,6 +70,7 @@ p{
     font-size: 25px;
     border: 1px black solid;
     border-radius: 15%;
+
   
     
 }
@@ -81,4 +82,22 @@ label{
 p:hover {
     background-color: green;
   }
-
+  fieldset{
+ 
+   width: 50%;
+ 
+  }
+  .menufieldset{
+    display: flex;
+   justify-content: center;
+  }
+  .attr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+ 
+  }
+  .attribut{
+ 
+  }
