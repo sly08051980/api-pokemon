@@ -35,7 +35,7 @@ justify-content: center;
 
 }
 .stats img {
-    width: 55%;
+    width: 50%;
 }
 .affichage{
    border-radius: 5%;
@@ -101,3 +101,12 @@ p:hover {
   .attribut{
  
   }
+  img{
+    background-color: black;
+    border-radius: 50%;
+    border-style: inset;
+    box-shadow: 10px 5px 5px red;
+   
+  }
+
+  

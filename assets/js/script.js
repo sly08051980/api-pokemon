@@ -72,7 +72,15 @@ function pokemonFunction() {
             }
         console.log("pokemon choisi : " ,pokemonChoisiAttribut);
 
-        stats.innerHTML = `<img src="${pokemonChoisi.image}" alt=""/>`
+        
+
+        stats.innerHTML = `<img id ="img" src="${pokemonChoisi.image}" alt=""/>`
+        let img=document.getElementById('img');
+  
+let angle=0;
+setInterval(function(){
+    img.style.transform="rotateZ("+ angle++ +"deg)";
+}, 30);
         
         let statistique = document.createElement("div");
         statistique.setAttribute("class" , "statistique");
