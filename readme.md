@@ -16,7 +16,7 @@ Dans un premier temps il y a 2 button radio qui permet de faire une selection so
 
 - Attribut on change d api : https://pokebuildapi.fr/api/v1/types
 
-- Un attribut, affiche une liste de pokemon possédant cet attribut.
+- Un attribut, affiche une liste de pokemon possédant l'attribut sélectionné via le select (liste déroulante).
 
 **Dans cette liste si l on clique sur un pokemon on affiche ses caractéristiques**
 
